@@ -11,6 +11,7 @@
 
 
 /* global variables tracking status of each form section */
+//Changed the first variables to false.
 var acresComplete = false;
 var cropsComplete = false;
 var monthsComplete = false;
