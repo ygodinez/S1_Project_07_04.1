@@ -50,23 +50,12 @@ function verifyAcres() {
     testFormCompleteness();
   }
 }
+
   /* verify at least one crops checkbox is checked */
   function verifyCrops() {
-    try { for ( var  i=0; i <7;i++) {
-    if
-    (cropsFieldset.getElementsByTagName("input")[i].checked){
-      cropsComplete = true; messageElement.innerHTML=""; //clear previous
-      message or recommendation
-      testFormCompleteness(); i=8;
-    }
-    if (i===7){
-      throw " Please select atleast one crop.";
-    }
-    catch(message){
-      cropsComplete= false; messageHeadElement.innerHTML=""; //remove any former recommendation heaading messageElement.innnerHTML=message; //display error
-      Message
-    }
+    testFormCompleteness();
   }
+
   /* verify months text box entry is between 1 and 12 */
   function verifyMonths() {
     // testFormCompleteness();
@@ -87,16 +76,19 @@ function verifyAcres() {
       testFormCompleteness();
     }
   }
+
   /* verify that a fuel option button is selected */
   function verifyFuel() {
     testFormCompleteness();
   }
+
   /* check if all four form sections are completed */
   function testFormCompleteness() {
     if (acresComplete && cropsComplete && monthsComplete && fuelComplete) {
       createRecommendation();
     }
   }
+
   /* generate tractor recommendation based on user selections */
   function createRecommendation() {
     if (acresBox.value <= 5000) { // 5000 acres or less, no crop test needed
